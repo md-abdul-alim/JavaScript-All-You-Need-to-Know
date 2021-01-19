@@ -1,3 +1,7 @@
+//Closure is when a function is able to remember and access it's lexical scope even
+// when that function executing outside it's lexical scope
+
+//Example 1
 var b = 10
 
 function a(){
@@ -8,3 +12,5 @@ function a(){
 }
 var abc = a()
 console.dir(abc)
+
+//Example 2
