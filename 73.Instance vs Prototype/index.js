@@ -31,3 +31,16 @@ console.log(sqr1.getWidth())
 
 //Note: instance member can access the prototype member.
 //As well as prototype member can also access the instance member.
+
+//this will check whether a property is really it's own property or not
+console.log(sqr1.hasOwnProperty('width'))
+console.log(sqr1.hasOwnProperty('getWidth'))
+console.log(sqr1.hasOwnProperty('draw'))
+
+//this will return only instance member
+console.log(Object.keys(sqr1))
+
+//This will return prototype and instance all members
+for(var m in sqr1){
+    console.log(m)
+}
