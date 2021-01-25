@@ -8,7 +8,7 @@ function Shape(color){
 }
 
 Shape.prototype.common = function(){
-    console.log('I am Common Method')
+    console.log('I am Common Method from base Shape')
 }
 
 function Square(width, color){
@@ -21,10 +21,12 @@ extend(Shape, Square)
 Square.prototype.draw = function(){
     console.log('Draw is a property member')
 }
-
+//method overriding
+Square.prototype.common = function(){
+    // Shape.prototype.common.call(this)
+    console.log('Common method has been override in Square')
+}
 var sqr = new Square(44,'Pink')
-console.log(sqr)
-
 function Circle(radius, color){
     Shape.call(this,color)
     this.radius = radius
@@ -33,12 +35,28 @@ extend(Shape, Circle)
 
 //method overriding
 Circle.prototype.common = function(){
-    Shape.prototype.common.call(this)
-    console.log('Common method has been override')
+    //Shape.prototype.common.call(this)
+    console.log('Common method has been override in Circle')
 }
 
 var c = new Circle(5, 'Black')
-//calling overriding method
-console.log(c.common())
-//calling base method
+var s = new Shape("purple")
+
+//polymorphism
+console.log(s.common())
 console.log(sqr.common())
+console.log(c.common())
+
+console.log("----Just calling common method----")
+//Array
+var shapes = [s,c,sqr]
+
+for(var m of shapes){
+    m.common()
+}
+//kono ekta jinis kotha teke asche tar corse check
+console.log(c instanceof Circle)
+console.log(c instanceof Shape)//True because Circle inherit Shape
+console.log(c instanceof Square)
+console.log(sqr instanceof Square)
+console.log(sqr instanceof Shape)
