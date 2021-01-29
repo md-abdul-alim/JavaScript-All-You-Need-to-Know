@@ -1,0 +1,7 @@
+console.log(document.head)
+console.log(document.body)
+console.log(document.documentURI)
+console.log(document.URL)
+console.log(document.title)
+console.log(document.contentType)
+console.log(document.width)
