@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p id="text">hello</p>
+    <button onclick="" id="myBtn">Click me</button>
+    
+    <script>
+        // document.getElementById('text').innerHTML = "Milon"
+        var isChange = false
+        document.getElementById('myBtn').onclick = function(){
+            if(isChange ==false){
+                isChange = true
+                document.getElementById('text').innerHTML = "Thanks Milon"
+            }else{
+                isChange = false
+                document.getElementById('text').innerHTML = "hello"
+            }
+        }
+    </script>
+</body>
+</html>
